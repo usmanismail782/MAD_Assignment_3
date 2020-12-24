@@ -31,7 +31,7 @@ public class CrimeActivity extends AppCompatActivity {
         {
             boolean requirePolice = (5 * i) % 2 == 0;
             boolean isSolve =  (7*i+1) % 2  == 0;
-            Crime crime = new Crime("Title"+i, "24\\12\\2020",true,  requirePolice );
+            Crime crime = new Crime("Title"+i, "24\\12\\2020",isSolve,  requirePolice );
             CrimeLab.getCrimeLab_Object().getCrimeList().add(crime);
         }
 
@@ -78,6 +78,8 @@ public class CrimeActivity extends AppCompatActivity {
             if(crime != null){
 
                 CrimeLab.getCrimeLab_Object().getCrimeList().add(crime);
+                loadFragment(new CrimeList_Fragment());
+
 
             }
         }
