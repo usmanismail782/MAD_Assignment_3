@@ -2,23 +2,26 @@ package com.example.mad_assignment_3;
 
 import android.content.Context;
 import android.content.Intent;
+import android.icu.text.CaseMap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.UUID;
 
-public class CrimeAdaptor extends RecyclerView.Adapter<CrimeAdaptor.ContactViewHolder> {
+public class CrimeAdaptor extends RecyclerView.Adapter<CrimeAdaptor.CrimeViewHolder> {
 
     private Context context;
-    private ArrayList<Crime> crimeList = new ArrayList<>();
+    private static ArrayList<Crime> crimeList;
 
     public CrimeAdaptor(Context context, ArrayList<Crime> arrayList) {
         this.context = context;
@@ -27,12 +30,12 @@ public class CrimeAdaptor extends RecyclerView.Adapter<CrimeAdaptor.ContactViewH
 
     @NonNull
     @Override
-    public ContactViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CrimeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.recyclerview_crime_item,parent, false);
 
-        return new ContactViewHolder(view);
+        return new CrimeViewHolder(view);
     }
 
     @Override
@@ -41,34 +44,29 @@ public class CrimeAdaptor extends RecyclerView.Adapter<CrimeAdaptor.ContactViewH
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ContactViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CrimeViewHolder holder, int position) {
 
 
         String title = crimeList.get(position).getCrimeTitle();
-        Date date = crimeList.get(position).getCrimeDate();
+        String date = crimeList.get(position).getCrimeDate();
         boolean isSolved = crimeList.get(position).isCrimeSolved();
         boolean isPoliceRequire = crimeList.get(position).isRequirePolice();
 
         holder.item_crimeTitle.setText(title);
-        holder.item_crimeDate.setText("23\\12\\2020");
+        holder.item_crimeDate.setText(date);
         holder.item_check_Image.setVisibility(isSolved? View.VISIBLE : View.GONE);
         holder.item_callPolice_Btn.setVisibility(isPoliceRequire? View.VISIBLE : View.GONE);
 
-
-
-
-
-
     }
 
- public class ContactViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener{
+ public static class CrimeViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener{
 
         TextView item_crimeTitle,item_crimeDate;
         Button  item_callPolice_Btn;
         ImageView item_check_Image;
 
 
-        public ContactViewHolder(@NonNull View itemView) {
+        public CrimeViewHolder(@NonNull View itemView) {
             super(itemView);
 
 
@@ -81,16 +79,14 @@ public class CrimeAdaptor extends RecyclerView.Adapter<CrimeAdaptor.ContactViewH
 
         @Override
         public void onClick(View v) {
-                                                  /*     int position = this.getAdapterPosition();
-          Crime crime =(Crime) contactsList.get(position);
 
+            int position = this.getAdapterPosition();
+             UUID uuid = crimeList.get(position).getCrimeID();
+            String title = crimeList.get(position).getCrimeTitle();
+            String message = "Crime Title: "+ title;
+            Toast.makeText(v.getContext(),message,Toast.LENGTH_SHORT).show();
 
-            Intent intent;
-            intent = new Intent(context,View_Contact.class);
-            intent.putExtra("crimeDetails",crime);
-            context.startActivity(intent);
-*/
-                                    }
+        }
     }
 
 }

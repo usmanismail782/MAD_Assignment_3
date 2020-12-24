@@ -7,34 +7,69 @@
     android:background="#F5FDFDFD"
     tools:context=".CrimeActivity">
 
-    <Button
-        android:id="@+id/createNew_CrimeBtn"
+    <LinearLayout
+        android:id="@+id/crimeActivity_Btn_Layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:background="@drawable/round_box"
-        android:backgroundTint="#E53935"
-        android:onClick="createNewCrime_BtnListener"
-        android:text="Create New Crime"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:elevation="3dp"
+        android:fadingEdgeLength="2dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:translationZ="2dp"
+        android:background="@drawable/rectangle_box"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/crimeList_Btn"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_box"
+            android:backgroundTint="@color/blue"
+            android:onClick="crimeList_BtnListener"
+            android:text="Crime List"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+
+            />
+
+        <Button
+            android:id="@+id/createNew_CrimeBtn"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_box"
+            android:backgroundTint="@color/red"
+            android:onClick="createNewCrime_BtnListener"
+            android:text="Create Crime"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
 
 
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createNew_CrimeBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/crimeActivity_Btn_Layout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

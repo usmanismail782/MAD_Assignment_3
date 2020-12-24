@@ -5,12 +5,12 @@
     android:id="@+id/linearlayour_1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="15dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginRight="15dp"
+    android:layout_marginLeft="18dp"
+    android:layout_marginTop="12dp"
+    android:layout_marginRight="18dp"
     android:background="@drawable/round_box"
     android:backgroundTint="#F5FFFFFF"
-    android:elevation="3dp"
+    android:elevation="4dp"
     android:fadingEdgeLength="2dp"
     android:orientation="vertical">
 
@@ -32,8 +32,8 @@
 
             android:text="Crime Title"
             android:textAlignment="center"
-            android:textColor="#373737"
-            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -47,8 +47,8 @@
             android:paddingBottom="10dp"
             android:text="dd\\mm\\yyyy"
             android:textAlignment="center"
-            android:textColor="#8C8888"
-            android:textSize="20sp"
+            android:textColor="@color/light_black"
+            android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -58,14 +58,14 @@
 
     <ImageView
         android:id="@+id/item_check_Image"
-        android:layout_width="62dp"
-        android:layout_height="47dp"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toTopOf="@+id/item_callPolice_Btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_check_circle_icon"
-        app:tint="@color/green_dark" />
+        app:srcCompat="@drawable/ic_check_icon"
+        app:tint="@color/blue" />
 
     <Button
         android:id="@+id/item_callPolice_Btn"
@@ -73,11 +73,12 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:background="@drawable/round_box"
-        android:backgroundTint="#39D140"
+        android:backgroundTint="@color/blue"
 
         android:text="Call Police"
-        android:textColor="#0B0B0B"
+        android:textColor="#FFFFFF"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

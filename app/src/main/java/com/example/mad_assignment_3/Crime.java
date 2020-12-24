@@ -1,23 +1,22 @@
 package com.example.mad_assignment_3;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.UUID;
 
 public class Crime implements Serializable {
 
     private UUID crimeID;
     private String crimeTitle;
-    private Date crimeDate;
+    private String crimeDate;
     private boolean crimeSolved;
     private boolean requirePolice;
 
     public Crime() {
+
         crimeID = UUID.randomUUID();
-        crimeDate = new Date();
     }
 
-    public Crime( String crimeTitle, Date crimeDate, boolean crimeSolved, boolean requirePolice) {
+    public Crime( String crimeTitle, String crimeDate, boolean crimeSolved, boolean requirePolice) {
         this.crimeID = UUID.randomUUID();
         this.crimeTitle = crimeTitle;
         this.crimeDate = crimeDate;
@@ -41,11 +40,11 @@ public class Crime implements Serializable {
         this.crimeTitle = crimeTitle;
     }
 
-    public Date getCrimeDate() {
+    public String getCrimeDate() {
         return crimeDate;
     }
 
-    public void setCrimeDate(Date crimeDate) {
+    public void setCrimeDate(String crimeDate) {
         this.crimeDate = crimeDate;
     }
 
