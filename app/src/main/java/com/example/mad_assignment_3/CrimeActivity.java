@@ -1,20 +1,14 @@
 package com.example.mad_assignment_3;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-
-import java.util.ArrayList;
-import java.util.Date;
 
 public class CrimeActivity extends AppCompatActivity {
 
@@ -31,7 +25,7 @@ public class CrimeActivity extends AppCompatActivity {
         {
             boolean requirePolice = (5 * i) % 2 == 0;
             boolean isSolve =  (7*i+1) % 2  == 0;
-            Crime crime = new Crime("Title"+i, "24\\12\\2020",isSolve,  requirePolice );
+            Crime crime = new Crime("Title"+i, "24\\12\\2020",true,  requirePolice );
             CrimeLab.getCrimeLab_Object().getCrimeList().add(crime);
         }
 
@@ -78,7 +72,7 @@ public class CrimeActivity extends AppCompatActivity {
             if(crime != null){
 
                 CrimeLab.getCrimeLab_Object().getCrimeList().add(crime);
-                loadFragment(new CrimeList_Fragment());
+
 
 
             }

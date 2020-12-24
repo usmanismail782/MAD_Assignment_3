@@ -1,19 +1,15 @@
 package com.example.mad_assignment_3;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 public class CrimeList_Fragment extends Fragment {
 
@@ -22,7 +18,6 @@ public class CrimeList_Fragment extends Fragment {
     public CrimeList_Fragment() {
         // Required empty public constructor
     }
-
 
 
     @Override

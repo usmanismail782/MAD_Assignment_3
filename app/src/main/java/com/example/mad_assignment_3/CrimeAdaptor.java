@@ -1,8 +1,6 @@
 package com.example.mad_assignment_3;
 
 import android.content.Context;
-import android.content.Intent;
-import android.icu.text.CaseMap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.UUID;
 
 public class CrimeAdaptor extends RecyclerView.Adapter<CrimeAdaptor.CrimeViewHolder> {
 
@@ -25,7 +21,7 @@ public class CrimeAdaptor extends RecyclerView.Adapter<CrimeAdaptor.CrimeViewHol
 
     public CrimeAdaptor(Context context, ArrayList<Crime> arrayList) {
         this.context = context;
-        this.crimeList = arrayList;
+        crimeList = arrayList;
     }
 
     @NonNull
@@ -81,7 +77,6 @@ public class CrimeAdaptor extends RecyclerView.Adapter<CrimeAdaptor.CrimeViewHol
         public void onClick(View v) {
 
             int position = this.getAdapterPosition();
-             UUID uuid = crimeList.get(position).getCrimeID();
             String title = crimeList.get(position).getCrimeTitle();
             String message = "Crime Title: "+ title;
             Toast.makeText(v.getContext(),message,Toast.LENGTH_SHORT).show();
