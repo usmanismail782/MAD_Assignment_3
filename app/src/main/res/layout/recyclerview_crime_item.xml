@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearlayour_1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="15dp"
+    android:background="@drawable/round_box"
+    android:backgroundTint="#F5FFFFFF"
+    android:elevation="3dp"
+    android:fadingEdgeLength="2dp"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/item_crimeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Crime Title"
+            android:textAlignment="center"
+            android:textColor="#373737"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.533"
+            tools:layout_editor_absoluteX="185dp" />
+
+        <TextView
+            android:id="@+id/item_crimeDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:text="dd\\mm\\yyyy"
+            android:textAlignment="center"
+            android:textColor="#8C8888"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="40dp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/item_check_Image"
+        android:layout_width="62dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/item_callPolice_Btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_check_circle_icon"
+        app:tint="@color/green_dark" />
+
+    <Button
+        android:id="@+id/item_callPolice_Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/round_box"
+        android:backgroundTint="#39D140"
+
+        android:text="Call Police"
+        android:textColor="#0B0B0B"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
